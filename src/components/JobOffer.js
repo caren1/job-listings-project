@@ -1,6 +1,6 @@
 import React from 'react'
 
-const JobOffer = ({ job }) => {
+const JobOffer = ({ job, handleTagClick }) => {
 
     const tags = [job.role, job.level]
 
@@ -13,7 +13,7 @@ const JobOffer = ({ job }) => {
     }
 
     return (
-        <div className={`jobOffer flex-col my-16 mx-10 flex bg-white shadow-lg p-6 rounded ${job.featured && 'border-l-4 border-teal-500 border-solid'} sm:flex-row`}>
+        <div className={`jobOffer flex-col my-16 mx-10 flex bg-white shadow-lg p-6 rounded ${job.featured && 'border-l-4 border-teal-500 border-solid'} sm:flex-row sm:my-8`}>
             <div className="jobOffer__logo">
                 <img className="-mt-16 mb-4 w-20 h-20 sm:h-24 sm:w-24 sm:my-0" src={job.logo} alt="company-logo" />
             </div>
@@ -30,7 +30,7 @@ const JobOffer = ({ job }) => {
                 {
                     tags ? 
                     (tags.map((item) => (
-                    <span className="text-teal-500 bg-teal-100 text-xs mr-4 mb-4 p-2 rounded sm:mb-0">{item}</span>))) : ('')
+                    <span onClick={() => handleTagClick(item)} className="text-teal-500 cursor-pointer bg-teal-100 text-xs mr-4 mb-4 p-2 rounded sm:mb-0">{item}</span>))) : ('')
                 }
                 
             </div>
