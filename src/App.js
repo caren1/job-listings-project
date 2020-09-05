@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import data from './assets/data.json'
+import data from './data.json'
 import JobOffer from './components/JobOffer'
 
 function App() {
